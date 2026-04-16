@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->execute();
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
     if ($user) {
-        header("Location: ../main.php");
+        header("Location: ../FrontEnd/main.php");
         exit();
     } else {
         // Code de vérification incorrect

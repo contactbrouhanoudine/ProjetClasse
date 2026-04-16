@@ -19,7 +19,7 @@
             }
 
             $_SESSION['panier'][] = $produit;
-            header("Location: ../FrontEnd/panier.php");
+            header("Location: ../FrontEnd/main.php");
             exit();
         }
     }

@@ -64,8 +64,8 @@
             </div>
            <div class="element">
              <a href="../FrontEnd/main.php#container">Accueil</a>
-            <a href="../FrontEnd/products.php">Produits</a>
-            <a href="../FrontEnd/cart.php">Panier</a>
+            <a href="../FrontEnd/main.php#produit">Produits</a>
+            <a href="../FrontEnd/panier.php">Panier</a>
             <?php
                 
                 if(isset($_SESSION['username'])){

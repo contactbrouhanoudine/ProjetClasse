@@ -29,5 +29,7 @@
             </div>
             <p>Pas de compte? <a href="inscription.php">Inscrivez-vous</a></p>
         </form>
+    </div>
+        <?php include '../include/footer.php'; ?>   
 </body>
 </html>

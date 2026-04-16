@@ -20,19 +20,18 @@
             margin-bottom: 50px;
         }
         .card {
-            border: 1px solid #d41212;
             border-radius: 10px;
             width: 300px;
             text-align: center;
             height: auto;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .card img {
             width: 100%;
             margin: 0;
            border-top-left-radius: 10px;
            border-top-right-radius: 10px;
-            height: 150px;
+            height: 200px;
         }
         .card h3 {
             margin: 10px 0;
@@ -89,7 +88,7 @@
                 <img src="../image/commerce.jpg" alt="Boutique en ligne">
             </div>
         </section>
-        <section class="produit">
+        <section class="produit" id="produit">
             <?php
                 require_once '../Config/conn.php';
                 $sql = "SELECT * FROM produit";
