@@ -79,7 +79,7 @@
                     Merci de choisir notre boutique pour vos besoins d'achat en ligne!   
                 </p>
                 <div class="start">
-                    <p><a href="produits.php">Découvrir nos produits</a></p>
+                    <p><a href="#produit">Découvrir nos produits</a></p>
                     <p><a href="FrontEnd/inscription.php">Commencer</a></p>
                 </div>
                 
@@ -104,7 +104,13 @@
                         <div class="value"><p>Stock: </p><h3><?php echo $produit['stock']; ?></h3></div>
                         <div class="value"><p>Prix: </p><h3><?php echo $produit['prix']; ?> FCFA</h3></div>
                         <div class="btn">
-                                <p><a href="../Backend/ajouter_panier.php?id=<?php echo $produit['id_prod']; ?>">Ajouter au panier</a></p>
+                            <?php  
+                                    if(isset($_SESSION['email'])) {
+                                        echo '<p><a href="../Backend/ajouter_panier.php?id=' . $produit['id_prod'] . '">Ajouter au panier</a></p>';
+                                    } else {
+                                        echo "<p><a href='connexion.php'>Ajouter au panier</a></p>";
+                                    }
+                                    ?>
                                  <p><a href="produits.php">Commander</a></p>
                         </div>
                        

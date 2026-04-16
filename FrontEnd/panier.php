@@ -1,3 +1,4 @@
+<?php   session_start();  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,8 +66,8 @@
                 </thead>
                 <tbody>
                     <?php
-                    session_start();
-                    if(isset($_SESSION['panier']) && !empty($_SESSION['panier'])) {
+                    
+                    if(isset($_SESSION['panier']) && !empty($_SESSION['panier'])){
                         $total = 0;
                         foreach($_SESSION['panier'] as $id => $produit) {
                             $sousTotal = $produit['prix'] * $produit['stock'];
@@ -76,14 +77,14 @@
                                 <td>" . number_format($produit['prix'], 2) . " €</td>
                                 <td>" . $produit['stock'] . "</td>
                                 <td>" . number_format($sousTotal, 2) . " €</td>
-                                <td><a href='supprimer_produit.php?id=<?= $produit[id_prod] ?>'><i class='fas fa-trash'></i></a></td>
+                                <td><a href='../Backend/supprimer_panier.php?id=" . $produit['id_prod'] . "'><i class='fas fa-trash'></i></a></td>
                             </tr>";
-                        }
+                        } 
                         echo "<tr><td colspan='3'><strong>Total</strong></td><td><strong>" . number_format($total, 2) . " €</strong></td></tr>";
                     } else {
                         echo "<tr><td colspan='5'>Votre panier est vide</td></tr>";
                     }
-                    ?>
+                    ?> 
                 </tbody>
             </table>
             <div class="btn">

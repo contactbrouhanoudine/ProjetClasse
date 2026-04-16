@@ -65,7 +65,16 @@
            <div class="element">
              <a href="../FrontEnd/main.php#container">Accueil</a>
             <a href="../FrontEnd/main.php#produit">Produits</a>
-            <a href="../FrontEnd/panier.php">Panier</a>
+
+            <?php
+                if(isset($_SESSION['username'])){
+                    echo '<a href="../FrontEnd/panier.php">Panier</a>';
+                }else{
+                    echo '<a href="../FrontEnd/connexion.php">Panier</a>';
+                }
+
+            ?>
+           
             <?php
                 
                 if(isset($_SESSION['username'])){

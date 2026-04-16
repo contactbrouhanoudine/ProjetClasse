@@ -11,12 +11,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->execute();
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+    $sql = "SELECT * FROM admin WHERE email = :email";
+    $stmte = $conn->prepare($sql);
+   
+    $stmte->execute(['email' => $email]);
+
+
     if ($user && password_verify($password, $user['passwords'])) {
         // Authentification réussie
         session_start();
         $_SESSION['user_id'] = $user['id_users'];
         $_SESSION['username'] = $user['nom'];
+        $_SESSION['email'] = $user['email'];
         header("Location: ../FrontEnd/main.php");
+        exit();
+    } else if ($stmte->rowCount() > 0) {
+         
+       
+        // Authentification réussie pour l'admin
+        header("Location: ../FrontEnd/admin.php");
         exit();
     } else {
         // Authentification échouée
@@ -28,7 +41,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("Location: ../FrontEnd/connexion.php");
     exit();
 }
-
-
-
-?>

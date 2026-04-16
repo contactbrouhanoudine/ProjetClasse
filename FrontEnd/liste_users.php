@@ -15,7 +15,7 @@
                     <p>My Big Shop</p>
                 </div>
                 <div class="user-info">
-                    <span>Admin</span>
+                    <span><a href="../Backend/deconnexion.php">Deconnexion</a></span>
                     <i class="fas fa-user-circle" style="font-size: 40px; color: #667eea;"></i>
             </div>
 
@@ -68,7 +68,13 @@
                         <tr>
                             <td><?= $user['nom'] ?></td>
                             <td><?= $user['email'] ?></td>
-                            <td class="status"><?= $user['statut'] ?></td>
+                            <td class="status"><?php if($user['status'] == 1){
+                                echo "Actif";
+                            } else {
+                                echo "Inactif";
+                            }
+                                ?></td>
+                           
                             <td class="action">
                                 <a href="supprimer_produit.php?id=1"><i class="fas fa-trash"></i></a>
                             </td>

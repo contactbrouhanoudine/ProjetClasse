@@ -15,7 +15,7 @@
                     <p>My Big Shop</p>
                 </div>
                 <div class="user-info">
-                    <span>Admin</span>
+                    <span><a href="../Backend/deconnexion.php">Deconnexion</a></span>
                     <i class="fas fa-user-circle" style="font-size: 40px; color: #667eea;"></i>
             </div>
 
@@ -89,7 +89,7 @@
                 </div>
                 <div class="card">
                     <h3><i class="fas fa-dollar-sign"></i> Revenus</h3>
-                    <p>€<?= $total_revenue ?></p>
+                    <p>FCFA<?= $total_revenue ?></p>
                 </div>
             </div>
             
